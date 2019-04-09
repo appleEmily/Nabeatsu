@@ -25,16 +25,36 @@ class ViewController: UIViewController {
             return true
         }
         
-        // 問題2: 1の位が3かどうか調べる
-        
-        // 問題3: 10の位が3かどうか調べる
-
+//        // 問題2: 1の位が3かどうか調べる
+//        if number % 10 == 3 {
+//            return true
+//        }
+//        // 問題3: 10の位が3かどうか調べる
+//        if number / 10 % 10 == 3 {
+//            return true
+//        }
         // 問題4: 3がつくかどうか調べる
-        // 問題4をやるときは問題3と問題2の答えを消してから書こう
-
+    
+        var checkNum: Int = number
+        while checkNum != 0{
+            if  checkNum % 10 == 3{
+            return true
+        }else{
+            checkNum = checkNum / 10
+                
+            }
+        }
         
+        if number % 5 == 0{
+            return true
+        }
+        
+        
+        
+        // 問題4をやるときは問題3と問題2の答えを消してから書こう
         return false
     }
+    
     @IBAction func plusButton(){
         number = number + 1
         countLabel.text = String(number)
@@ -45,9 +65,14 @@ class ViewController: UIViewController {
         } else {
             
             faceLabel.text = "(゜o゜)"
+            
         }
     }
-
+    @IBAction func clear() {
+        number = 0
+        countLabel.text = String(number)
+    }
+    
 
 }
 
